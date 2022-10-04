@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Results({ results }) {
 	function loaded() {
@@ -9,7 +10,10 @@ function Results({ results }) {
 						<div key={index}>
 							<h2>{result.name}</h2>
 							<p>{result.description}</p>
-							<img src={result.thumbnail.path} alt='' />
+							<Link>
+								{result.urls[1].url}
+							</Link>
+							<img src={`${result.thumbnail.path}.${result.thumbnail.extension}`} alt={`Picture of ${result.name}`} />
 						</div>
 					);
 				})}

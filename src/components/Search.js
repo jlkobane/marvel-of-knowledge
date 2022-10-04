@@ -28,7 +28,6 @@ function Search(props) {
 	}
 	useEffect(() => {
 		getResutls();
-		
 	}, []);
 	const handleChange = (event) => {
 		setSearchState(event.target.value);
