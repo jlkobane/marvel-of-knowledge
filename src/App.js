@@ -11,7 +11,8 @@ function App() {
 		<>
 			<header>
 				<nav>
-					<Link to='/'>Home</Link> <Link to='characters'>Characters </Link> <Link to='comics'>Comics</Link>
+					<Link to='/'>Home</Link> 
+					<Link to='characters'>Characters </Link> <Link to='comics'>Comics</Link>
 					<Link to='authors'>Authors</Link>
 				</nav>
 			</header>
