@@ -8,16 +8,21 @@ function App() {
 	return (
 		<>
 			<header>
-				<nav>
-					<Link to='/'>Home</Link> 
-					<Link to='search'>Search</Link> 
-				</nav>
+				<div>
+					<nav className='color'>
+						<Link style={{ color: 'white' }} to='/'>
+							Home
+						</Link>
+						<Link style={{ color: 'white' }} to='search'>
+							Search
+						</Link>
+					</nav>
+				</div>
 			</header>
 			<main>
 				<Routes>
 					<Route path='/' element={<Home />} />
 					<Route path='search' element={<Characters />} />
-					
 				</Routes>
 			</main>
 		</>

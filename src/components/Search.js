@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../logo.jpg';
+import spiderman from '../spiderman.jpg';
 import Results from './Results';
 import md5 from 'js-md5';
 import { useEffect } from 'react';
@@ -18,13 +18,10 @@ function Search(props) {
 
 	let url = ``;
 	if (categoryState === 'characters') {
-		 url = `https://gateway.marvel.com/v1/public/${categoryState}?nameStartsWith=${searchState}&ts=${ts}&orderBy=name&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
+		url = `https://gateway.marvel.com/v1/public/${categoryState}?nameStartsWith=${searchState}&ts=${ts}&orderBy=name&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
 	} else if (categoryState === 'comics') {
-		 url = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=${searchState}&ts=${ts}&orderBy=title&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
-	} else if (categoryState === 'creators') {
-		 url = `https://gateway.marvel.com:443/v1/public/creators?nameStartsWith=${searchState}&ts=${ts}&orderBy=firstName&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
+		url = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=${searchState}&ts=${ts}&orderBy=title&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
 	}
-
 	function getResutls() {
 		fetch(url)
 			.then((res) => res.json())
@@ -52,8 +49,8 @@ function Search(props) {
 	};
 
 	return (
-		<div>
-			<img className='logo' src={logo} alt='Picture of comics' />
+		<div className='searchel'>
+			<img className='logo' src={spiderman} alt='Picture of comics' />
 			<form onSubmit={handleSubmit}>
 				<label for='search'>
 					<input
@@ -62,21 +59,20 @@ function Search(props) {
 						id='search'
 						placeholder={`Search for ${categoryState}`}
 					/>
-					<Dropdown onSelect={handleCategoryChange}>
+					<Dropdown className='dropdown' onSelect={handleCategoryChange}>
 						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							{categoryState}
+						 {categoryState}
 						</Dropdown.Toggle>
 
 						<Dropdown.Menu>
 							<Dropdown.Item eventKey='characters'>Characters</Dropdown.Item>
 							<Dropdown.Item eventKey='comics'>Comics</Dropdown.Item>
-							<Dropdown.Item eventKey='creators'>Creators</Dropdown.Item>
 						</Dropdown.Menu>
 					</Dropdown>
-					<button type='submit'>Submit</button>
+					<button className='searchbutton' type='submit'>Get Character/Comic</button>
 				</label>
 			</form>
-			<Results results={results} category={categoryState}/>
+			<Results results={results} category={categoryState} />
 		</div>
 	);
 }

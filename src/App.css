@@ -1,7 +1,122 @@
-
+.home { 
+  background-image: url('../background.jpg'); 
+  background-size: cover; 
+  position: fixed; 
+  min-height: 100%; 
+  min-width: 100%; 
+  top: 0; 
+  z-index: -100; 
+ 
+  
+}
 
 .logo { 
   height: 100px; 
   width: 100px;
 
+}
+
+.box { 
+  /* padding-top: 10px; */
+background-color: red; 
+/* border: 1px solid black; */
+opacity: 0.75
+}
+
+.welcome { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 240px; 
+  flex-direction: row; 
+  color: white; 
+ 
+} 
+
+.info { 
+text-align: center;
+padding: 0px 250px; 
+font-size: 30px; 
+margin-top: 10px; 
+color: white; 
+}  
+
+
+
+nav {  
+  display: flex; 
+  justify-content: space-evenly;  
+  padding-bottom: 12px; 
+  font-size: 25px; 
+  color: white; 
+  background-color: red;
+  padding-top: 10px; 
+  text-decoration: none; 
+  opacity: 0.75
+  
+}  
+
+nav a { 
+  text-decoration: none; 
+
+} 
+
+nav :hover { 
+  text-decoration: underline;
+} 
+
+.searchel { 
+  text-align: center; 
+  
+} 
+.logo { 
+  margin-top: 15px; 
+  margin-bottom: 15px;
+  width: 500px; 
+  height: 150px; 
+  border-radius: 20px;
+} 
+
+#search { 
+  width: 1000px; 
+  height: 40px; 
+  border-radius: 8px; 
+  font-size: 20px;
+  /* display: inline; */
+} 
+
+.dropdown { 
+ display: inline; 
+ margin-left: 5px;  
+ color: red; 
+ background-color: red;
+} 
+
+.searchbutton {
+  display: block; 
+  margin-top: 10px; 
+  margin-left: 450px;
+  padding: 10px 24px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 6px black;
+}
+
+.searchbutton:hover {
+  background-color: white; 
+  color: red; 
+  border: 1px red solid;
+}
+
+.searchbutton:active {
+  background-color: red; 
+  color: white;
+  box-shadow: 0 3px black;
+  transform: translateY(4px);
 }
