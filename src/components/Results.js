@@ -1,24 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Results({ results }) {
+function Results({ results, category }) { 
 	function loaded() {
+	function characters() {
 		return (
 			<section>
 				{results.map((result, index) => {
 					return (
 						<div key={index}>
 							<h2>{result.name}</h2>
-							<h2>{result.title}</h2>
-							{/* <h2>{result.items[0].name}</h2> */}
-							{/* <h2>{result.comics.items.name}</h2>  */}
-							{/* <img src={result.results.path.extension} alt="" /> */}
-							{/* <p>{result.description}</p> */}
-							{/* <p>{result.prices[0].price}</p>
-							{/* <p>{result.prices[1]}</p> */}
-							{/* <Link>{result.urls[1].url}</Link> */}
-							{/* <Link>{result.urls[1].url}</Link>
-							<Link>{result.urls[2].url}</Link> */}
 							<img
 								src={`${result.thumbnail.path}/portrait_large.${result.thumbnail.extension}`}
 								alt={`Picture of ${result.name}`}
@@ -29,14 +20,58 @@ function Results({ results }) {
 			</section>
 		);
 	}
-	function loading() {
+	function comics() {
 		return (
-			<>
-				<p>Getting info</p>
-			</>
+			<section>
+				{results.map((result, index) => {
+					return (
+						<div key={index}>
+							<h2>{result.title}</h2>
+							<img
+								src={`${result.thumbnail.path}/portrait_large.${result.thumbnail.extension}`}
+								alt={`Picture of ${result.name}`}
+							/>
+						</div>
+					);
+				})}
+			</section>
+		);
+	} 
+	
+	function creators() { 
+		// console.log(results[0].comics.items) 
+		return (
+			<section>
+				{results.map((result, index) => { 
+					// nested map (result.comics.items.map)
+					return (
+						<div key={index}> 
+						<p>only creator</p>
+							<h2>{result.fullName} Comics</h2> 
+							{/* <h2>{result.comics.items}</h2> */}
+							<img
+								src={`${result.thumbnail.path}/portrait_large.${result.thumbnail.extension}`}
+								alt={`Picture of ${result.name}`}
+							/>
+						</div>
+					);
+				})}
+			</section>
 		);
 	}
-	return results ? loaded() : loading();
-}
+	if (category === 'characters') {
+		return characters();
+	} else if (category === 'comics') {
+		return comics();
+	} else if (category === 'creators') {
+		return creators();
+	} 
+} 
+function loading() { 
+	return <h1>Getting your info</h1>
+} 
+return results ? loaded() : loading() 
+} 
+
 
 export default Results;

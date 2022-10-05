@@ -76,7 +76,7 @@ function Search(props) {
 					<button type='submit'>Submit</button>
 				</label>
 			</form>
-			<Results results={results} />
+			<Results results={results} category={categoryState}/>
 		</div>
 	);
 }
