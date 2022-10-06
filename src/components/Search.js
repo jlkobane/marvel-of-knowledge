@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import spiderman from '../spiderman.jpg';
+import ironman from '../ironman.jpg';
 import Results from './Results';
 import md5 from 'js-md5';
 import { useEffect } from 'react';
@@ -50,7 +50,7 @@ function Search(props) {
 
 	return (
 		<div className='searchel'>
-			<img className='logo' src={spiderman} alt='Picture of comics' />
+			<img className='logo' src={ironman} alt='Picture of comics' />
 			<form onSubmit={handleSubmit}>
 				<label for='search'>
 					<input

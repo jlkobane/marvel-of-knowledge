@@ -8,12 +8,15 @@ function Results({ results, category }) {
 				<section>
 					{results.map((result, index) => {
 						return (
-							<div key={index}>
-								<h2>{result.name}</h2>
+							<div className='Info' key={index}>
 								<img
-									src={`${result.thumbnail.path}/portrait_large.${result.thumbnail.extension}`}
+									className='Img'
+									src={`${result.thumbnail.path}.${result.thumbnail.extension}`}
 									alt={`Picture of ${result.name}`}
 								/>
+								<div className='Name'>
+									<h2>{result.name}</h2>
+								</div>
 							</div>
 						);
 					})}
@@ -25,12 +28,15 @@ function Results({ results, category }) {
 				<section>
 					{results.map((result, index) => {
 						return (
-							<div key={index}>
-								<h2>{result.title}</h2>
+							<div classname='Info' key={index}>
 								<img
-									src={`${result.thumbnail.path}/portrait_large.${result.thumbnail.extension}`}
+									className='comicImg'
+									src={`${result.thumbnail.path}.${result.thumbnail.extension}`}
 									alt={`Picture of ${result.name}`}
 								/>
+								<div className='Name'>
+									<h2>{result.title}</h2>
+								</div>
 							</div>
 						);
 					})}
