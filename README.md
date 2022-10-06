@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+## Description: 
+Marvel Wiki is a React app that uses the offical Marvel API to pull data (https://developer.marvel.com/docs). The app allows users to find any information they want about a certain Marvel character or comic, all a user needs to do is enter the name or titl of a character or comic and any matching results will pop up on the page. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshot of App: 
+![Screenshot of "Marvel Wiki"]<img width="1277" alt="Screen Shot 2022-10-06 at 8 23 22 AM" src="https://user-images.githubusercontent.com/111748987/194353615-5fe24155-1989-4fe6-896a-f51c4e610e53.png">
 
-## Available Scripts
+<img width="1280" alt="Screen Shot 2022-10-06 at 8 23 56 AM" src="https://user-images.githubusercontent.com/111748987/194353667-21bb2d17-1f07-489d-b2e2-f3c0b28ffd5a.png">
+ 
+ ## Technologies used:
+HTML, CSS, Javascript, React
 
-In the project directory, you can run:
+## User Stories: 
+As a user, I want a sidebar for easy navigation.
+As a user, I want to see the top superheroes in a suggestion section.
+As a user, I want different sections for characters , comics, and authors so searches do not get diluted.
+As a user, I want a big search bar so I will be able to see what I am typing clearly. 
 
-### `npm start`
+## Wireframe: 
+![Screenshot of "Marvel Wiki" Wireframe]<img width="808" alt="Screen Shot 2022-09-29 at 11 46 23 AM" src="https://user-images.githubusercontent.com/111748987/194354884-b628bb64-856b-4e13-a488-cb7311c7e29f.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Unsolved problems: 
+No error if search does not yield results. 
+Characters and comics are not clickable and do not bring up any information about them. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Major Hurdles: 
+My API really slowed me down, getting the data to come back was difficult since everything I wanted was buried deep down in the results. But once I figured out how the API worked it didn't really bring me any trouble besides getting data. 
 
-### `npm test`
+My API was not up to date certain major characters didn't have any descriptions and many links to external sites were broken as well as a lot of images for the characters and comics. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Styling during this project was a huge pain. Getting everything the way I wanted on top of making it responsive was tough. It required a lot of googling and questions in order to get my app to look presentable. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
