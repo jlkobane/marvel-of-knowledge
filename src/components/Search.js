@@ -25,7 +25,6 @@ function Search(props) {
 			.then((res) => res.json())
 			.then((res) => {
 				setResults(res.data.results);
-				console.log(res);
 			})
 			.catch((err) => {
 				console.error(err);
@@ -37,14 +36,15 @@ function Search(props) {
 	const handleChange = (event) => {
 		setSearchState(event.target.value);
 	};
-	const handleCategoryChange = (event) => {
+	const handleCategoryChange = (event) => { 
+		setResults([]) 
 		setCategoryState(event);
 	}; 
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		getResutls();  
-		console.log(results); 
 	};
+	
 	return (
 		<div className='searchel'>
 			<img className='logo' src={ironman} alt='Picture of comics' />
