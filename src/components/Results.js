@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 
 function Results({ results, category }) {
 	function loaded() {
-		function characters() {
+		function characters() { 
+			if (results.length == 0) {
+				return (
+					<div className='results'>Character does not exist. Please try again.</div>
+				)  
+				} else {
+			
 			return (
 				<div className='results'>
 					{results.map((result, index) => {
@@ -24,8 +30,15 @@ function Results({ results, category }) {
 					})}
 				</div>
 			);
-		}
-		function comics() {
+		} 
+	}
+		function comics() { 
+			if (results.length == []) {
+				return (
+					<div className='results'>Comic does not exist. Please try again.</div>
+				)  
+				} else {
+			
 			return (
 				<div className='results'>
 					{results.map((result, index) => {
@@ -45,14 +58,13 @@ function Results({ results, category }) {
 				</div>
 			);
 		}
-
+	}
 		if (category === 'characters') {
 			return characters();
 		} else if (category === 'comics') {
 			return comics();
 		}
 	}
-	console.log(results);
 	function loading() {
 		return <h1>Getting your info</h1>;
 	}
