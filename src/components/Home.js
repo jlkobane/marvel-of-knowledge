@@ -7,9 +7,8 @@ function Home(props) {
 				<div className='box'>
 					<h1 className='welcome'>Welcome to the Marvel Wiki</h1>
 					<p className='info'>
-						Learn about your favorite Marvel characters, authors, comics and
-						more! All at the click of a button. So join us in the fight againts
-						good vs. evil.
+						Learn about your favorite Marvel characters and comics! All at the click of a button. So come join us in the fight againts
+						evil.
 					</p>
 				</div>
 			</div>
