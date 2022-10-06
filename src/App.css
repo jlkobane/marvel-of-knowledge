@@ -73,13 +73,27 @@ nav :hover {
 .logo { 
   margin-top: 15px; 
   margin-bottom: 15px;
-  width: 500px; 
+  width: 75%; 
+  max-width: 500px;
   height: 150px; 
   border-radius: 20px;
 } 
 
+.searchtop { 
+  display: flex;
+} 
+
+.searchcomps { 
+  display: flex;   
+  margin: auto;
+  width: 80%; 
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-direction: column;
+}
+
 #search { 
-  width: 1000px; 
+  width: 90%; 
   height: 40px; 
   border-radius: 8px; 
   font-size: 20px;
@@ -90,13 +104,12 @@ nav :hover {
  display: inline; 
  margin-left: 5px;  
  color: red; 
- background-color: red;
 } 
 
 .searchbutton {
   display: block; 
+  margin: auto;
   margin-top: 10px; 
-  margin-left: 450px;
   padding: 10px 24px;
   font-size: 20px;
   cursor: pointer;
@@ -121,31 +134,58 @@ nav :hover {
   color: white;
   box-shadow: 0 3px black;
   transform: translateY(4px);
-} 
+}  
+
+.results { 
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  margin: 15px; 
+  justify-content: center; 
+  
+}
 
 .Info {  
   /* display: flex; */
   position: relative; 
   text-align: center; 
-  color: white;
-} 
+}  
+
+.comicInfo { 
+  width: 150px;
+  height: 70px;
+}
 
 .Name { 
   position: absolute; 
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  padding: 0px 80px; 
-  z-index: 1;
-} 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+   top: 85%; 
+   bottom: 0%;
+   left: 50%; 
+   transform: translate(-50%, -50%);  
+  color: lightgray; 
+  background-color: black; 
+  background-size: 50% auto; 
+  width: 93%;
+  height: 26%; 
+  border-radius: 20px;
+  opacity: 0.7; 
+  padding-bottom: 0px;
+}  
+
 
 .Img {  
-  /* position: absolute; */
-  width: 500px; 
-  height: 400px; 
+  /* position: absolute;  */
+  /* display: flex; */
+  width: 300px; 
+  height: 300px; 
   margin-top: 15px;  
-  z-index: 0; 
-  border-radius: 10%;
+  padding: 10px;
+  /* z-index: 0;  */
+  border-radius: 10%; 
+  /* min-width: 300px; */
 } 
  
  /* .comicInfo { 
@@ -165,7 +205,9 @@ position: relative;
 
 .comicImg { 
 width: 300px;
-  height: 100%;
-  margin-top: 15px;
-  border-radius: 3%;
+  height: 500px;
+  margin-top: 15px; 
+  padding: 10px;
+  border-radius: 10%; 
+  min-width: 300px;
 } 

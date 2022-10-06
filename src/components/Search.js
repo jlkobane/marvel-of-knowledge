@@ -10,18 +10,16 @@ function Search(props) {
 	const [categoryState, setCategoryState] = useState('Category');
 	const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_API_KEY;
 	const PRIVATE_KEY = process.env.REACT_APP_PRIVATE_API_KEY;
-	// console.log(PUBLIC_KEY, PRIVATE_KEY);
 	const ts = Number(new Date());
 	const hash = md5.create();
 	hash.update(ts + PRIVATE_KEY + PUBLIC_KEY);
-	// console.log(ts, hash);
 
 	let url = ``;
 	if (categoryState === 'characters') {
 		url = `https://gateway.marvel.com/v1/public/${categoryState}?nameStartsWith=${searchState}&ts=${ts}&orderBy=name&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
 	} else if (categoryState === 'comics') {
 		url = `https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=${searchState}&ts=${ts}&orderBy=title&limit=50&apikey=${PUBLIC_KEY}&hash=${hash.hex()}`;
-	}
+	} 
 	function getResutls() {
 		fetch(url)
 			.then((res) => res.json())
@@ -41,37 +39,42 @@ function Search(props) {
 	};
 	const handleCategoryChange = (event) => {
 		setCategoryState(event);
-	};
+	}; 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		getResutls();
-		console.log(results);
+		getResutls();  
+		console.log(results); 
 	};
-
 	return (
 		<div className='searchel'>
 			<img className='logo' src={ironman} alt='Picture of comics' />
-			<form onSubmit={handleSubmit}>
-				<label for='search'>
-					<input
-						onChange={handleChange}
-						type='text'
-						id='search'
-						placeholder={`Search for ${categoryState}`}
-					/>
-					<Dropdown className='dropdown' onSelect={handleCategoryChange}>
-						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-						 {categoryState}
-						</Dropdown.Toggle>
+			<div className='searchcomps'>
+				<form onSubmit={handleSubmit}>
+						<div className='searchtop'>
+							<input
+								onChange={handleChange}
+								type='text'
+								id='search'
+								placeholder={`Search for ${categoryState}`}
+							/>
+							<Dropdown className='dropdown btn-danger' onSelect={handleCategoryChange}>
+								<Dropdown.Toggle variant='danger' id='dropdown-basic'>
+									{categoryState}
+								</Dropdown.Toggle>
 
-						<Dropdown.Menu>
-							<Dropdown.Item eventKey='characters'>Characters</Dropdown.Item>
-							<Dropdown.Item eventKey='comics'>Comics</Dropdown.Item>
-						</Dropdown.Menu>
-					</Dropdown>
-					<button className='searchbutton' type='submit'>Get Character/Comic</button>
-				</label>
-			</form>
+								<Dropdown.Menu>
+									<Dropdown.Item eventKey='characters'>
+										Characters
+									</Dropdown.Item>
+									<Dropdown.Item eventKey='comics'>Comics</Dropdown.Item>
+								</Dropdown.Menu>
+							</Dropdown>
+						</div>
+						<button className='searchbutton' type='submit'>
+							Get Character/Comic
+						</button>
+				</form>
+			</div>
 			<Results results={results} category={categoryState} />
 		</div>
 	);
